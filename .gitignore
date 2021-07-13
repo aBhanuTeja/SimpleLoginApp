@@ -1,0 +1,7 @@
+Pods/
+.DS_Store
+Podfile.lock
+Powerx Fastfit.xcworkspace/xcuserdata/
+SimpleLoginApp.xcodeproj/xcuserdata/
+SimpleLoginApp.xcodeproj/project.xcworkspace
+SimpleLoginApp/GoogleService-Info.plist
