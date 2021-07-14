@@ -26,7 +26,7 @@ class SignUpModel: NSObject {
                 let strError = CommonSignInSignUpModel.sharedInstance().getFirebaseErrorStr(error: error)
                 completion(nil, strError)
           } else {
-            let newUserInfo = authResult?.user// Auth.auth().currentUser
+            let newUserInfo = authResult?.user
             self.handleFireStore(firstName: firstName, lastName: lastName, uID: newUserInfo!.uid) { status, msg in
                 if !status {
                     completion(nil, msg)

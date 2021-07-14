@@ -39,7 +39,7 @@ class MenuTableCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setUpAutoLayout() {
+    private func setUpAutoLayout() {
         NSLayoutConstraint.activate([
             imageIcon.centerYAnchor.constraint(equalTo: centerYAnchor),
             imageIcon.leftAnchor.constraint(equalTo: leftAnchor, constant: 12),

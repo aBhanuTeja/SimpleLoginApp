@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 
 protocol ContainerVCDelegate {
-    func handleMenuToggle(menuOption: MenuOptions?)
+    func handleMenuTap(menuOption: MenuOptions?)
 }
 
 class ContainerVC: UIViewController {
@@ -43,7 +43,7 @@ class ContainerVC: UIViewController {
         }
     }
 
-    private func showMenuController(shouldExpand: Bool, menuOption: MenuOptions?) {
+    private func showHideSideMenu(shouldExpand: Bool, menuOption: MenuOptions?) {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut) {
             self.centerController.view.frame.origin.x = shouldExpand ? self.centerController.view.frame.width - self.slideInMenuPadding : 0
         } completion: { (finished) in
@@ -76,11 +76,11 @@ class ContainerVC: UIViewController {
 }
 
 extension ContainerVC: ContainerVCDelegate {
-    func handleMenuToggle(menuOption: MenuOptions?) {
+    func handleMenuTap(menuOption: MenuOptions?) {
         if !isSlideInMenuPresented {
             setUpMenuController()
         }
         isSlideInMenuPresented.toggle()
-        showMenuController(shouldExpand: isSlideInMenuPresented, menuOption: menuOption)
+        showHideSideMenu(shouldExpand: isSlideInMenuPresented, menuOption: menuOption)
     }
 }

@@ -7,12 +7,12 @@
 
 import UIKit
 
-enum MenuOptions: Int, CustomStringConvertible {
+enum MenuOptions: Int, CaseIterable {
     case Profile
     case Settings
     case Events
     case Logout
-    
+
     var description: String {
         switch self {
         case .Profile:
@@ -25,7 +25,7 @@ enum MenuOptions: Int, CustomStringConvertible {
             return "Logout"
         }
     }
-    
+
     var image: UIImage {
         switch self {
         case .Profile:

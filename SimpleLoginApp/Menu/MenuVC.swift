@@ -28,13 +28,13 @@ class MenuVC: UIViewController {
         addViews()
     }
     
-    func addViews() {
+    private func addViews() {
         view.backgroundColor = UIColor(red: 0.969, green: 0.969, blue: 0.969, alpha: 1.0)
         view.addSubview(menuTableView)
         setUpAutoLayout()
     }
     
-    func setUpAutoLayout() {
+   private func setUpAutoLayout() {
         let guide = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([
             menuTableView.leftAnchor.constraint(equalTo: guide.leftAnchor),
@@ -47,7 +47,7 @@ class MenuVC: UIViewController {
 
 extension MenuVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return MenuOptions.allCases.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -60,6 +60,6 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let menuData = MenuOptions(rawValue: indexPath.row)
-        delegate?.handleMenuToggle(menuOption: menuData)
+        delegate?.handleMenuTap(menuOption: menuData)
     }
 }

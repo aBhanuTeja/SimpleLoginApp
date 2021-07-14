@@ -27,23 +27,23 @@ class HomeVC: UIViewController {
         setUpNavigationBar()
     }
 
-    func addViews() {
+    private func addViews() {
         view.backgroundColor = .white
         view.addSubview(sampleLbl)
         setUpAutoLayout()
     }
 
-    func setUpNavigationBar() {
+    private func setUpNavigationBar() {
         title = "Home"
         navigationItem.leftBarButtonItem  = button
         addViews()
     }
     
     @objc func menuBtnClicked() {
-        delegate?.handleMenuToggle(menuOption: nil)
+        delegate?.handleMenuTap(menuOption: nil)
     }
     
-    func setUpAutoLayout() {
+    private func setUpAutoLayout() {
         let guide = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([
             sampleLbl.centerYAnchor.constraint(equalTo: guide.centerYAnchor),

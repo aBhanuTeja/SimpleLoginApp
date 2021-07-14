@@ -51,7 +51,6 @@ class SignInSignUpVC: UIViewController {
             superStackView.leftAnchor.constraint(equalTo: guide.leftAnchor, constant: 20),
             superStackView.rightAnchor.constraint(equalTo: guide.rightAnchor, constant: -20),
             superStackView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -30),
-//            superStackView.heightAnchor.constraint(equalToConstant: 50),
 
             signInBtn.heightAnchor.constraint(equalToConstant: 50),
             
