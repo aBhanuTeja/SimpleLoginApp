@@ -10,7 +10,7 @@ import UIKit
 class SignInSignUpVC: UIViewController {
 
     lazy var superStackView: CommonStackView = {
-        let stack = CommonStackView()
+        let stack = CommonStackView(arrangedSubviews: [signInBtn, SignUpBtn])
         stack.axis = .vertical
         stack.spacing = 20
         stack.distribution = .fillEqually
@@ -40,8 +40,6 @@ class SignInSignUpVC: UIViewController {
     func addViews() {
         self.navigationController?.navigationBar.isHidden = true
         view.backgroundColor = .white
-        superStackView.addArrangedSubview(signInBtn)
-        superStackView.addArrangedSubview(SignUpBtn)
         view.addSubview(superStackView)
     }
 

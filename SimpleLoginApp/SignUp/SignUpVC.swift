@@ -70,7 +70,7 @@ class SignUpVC: UIViewController {
     }()
     
     lazy var superStackView: CommonStackView = {
-        let stack = CommonStackView()
+        let stack = CommonStackView(arrangedSubviews: [alreadyHaveAccount, signInBtn])
         stack.axis = .horizontal
         stack.spacing = 5
         stack.distribution = .fill
@@ -91,8 +91,6 @@ class SignUpVC: UIViewController {
         signUpContentView.addSubview(emailTF)
         signUpContentView.addSubview(passwordTF)
         signUpContentView.addSubview(signUpBtn)
-        superStackView.addArrangedSubview(alreadyHaveAccount)
-        superStackView.addArrangedSubview(signInBtn)
         signUpContentView.addSubview(superStackView)
         view.backgroundColor = .white
         view.addSubview(signUpContentView)
